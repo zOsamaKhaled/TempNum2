@@ -1,0 +1,1340 @@
+/* ========================== Root ======================= */
+
+:root {
+    --main-color: #19c8fa;
+    --transparent-color: rgb(15 116 143 / 70%);
+    --section-padding: 100px 0;
+    --main-transition: 0.5s;
+}
+
+/* ========================== Root ======================= */
+
+
+
+/* ============================= Start Global Rules ==================================== */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Small Screen */
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* Medium Screen */
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* Large Screen */
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* =============================  End Global Rules ==================================== */
+
+
+/* =============================  Start Global Heading ================================ */
+
+
+
+.main-heading {
+    text-align: center;
+}
+
+.main-heading h2 {
+    text-transform: uppercase;
+    font-size: 40px;
+    margin-bottom: 70px;
+    position: relative;
+    font-weight: normal;
+}
+
+.main-heading h2::before {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 2px;
+    background-color: #333;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -30px;
+}
+
+.main-heading h2::after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border: 2px solid #333;
+    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -38px;
+    background-color: white;
+}
+
+.main-heading p {
+    width: 550px;
+    max-width: 100%;
+    margin: 0 auto 100px;
+    line-height: 2;
+    color: #777;
+}
+
+/* =============================  End Global Heading ================================== */
+
+/* =============================  Start Header ==================================== */
+header {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    min-height: 103px;
+}
+
+header .container::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: calc(100% - 32px);
+    height: 1px;
+    background-color: #a2a2a2;
+    left: 18px;
+}
+
+header .container .logo {
+    background-color: transparent;
+}
+
+header .container nav {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+header .container nav ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+header .container nav ul li {
+    width: 100%;
+}
+
+header .container nav ul li a {
+    text-decoration: none;
+    padding: 41px 10px;
+    color: white;
+    transition: var(--main-transition);
+    position: relative;
+    font-size: 16px;
+    z-index: 2;
+    top: 1px;
+    display: block;
+}
+
+header .container nav ul li a:hover {
+    color: var(--main-color);
+    border-bottom: 1px solid #19c8fa;
+}
+
+header .container nav ul .active {
+    color: var(--main-color);
+}
+
+header .container nav .toggle-menu {
+    color: white;
+    font-size: 25px;
+    display: none;
+    margin-right: 10px;
+}
+
+@media (max-width:767px) {
+    header .container nav .toggle-menu {
+        display: block;
+    }
+
+    header .container nav ul {
+        display: none;
+    }
+
+    header .container nav .toggle-menu:hover+ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgb(0 0 0 / 50%);
+    }
+
+    header nav ul li a {
+        padding: 15px !important;
+    }
+}
+
+header .container img {
+    height: 40px;
+}
+
+header .container .search-bar {
+    border-left: 1px solid white;
+    padding: 10px 20px;
+    margin-left: 10px;
+}
+
+header .container .search-bar i {
+    color: white;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+/* =============================  End Header ==================================== */
+
+/* =============================  Start Landing ==================================== */
+.landing {
+    min-height: 100vh;
+    background-image: url("../images/landing.jpg");
+    background-size: cover;
+    position: relative;
+    top: 0;
+}
+
+.landing .overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 60%);
+    position: absolute;
+}
+
+.landing .text {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: flex-end;
+    color: white;
+    background-color: var(--transparent-color);
+    padding: 50px;
+}
+
+
+.landing .text .content {
+    max-width: 500px;
+}
+
+.landing .text .content h2 {
+    font-size: 32px;
+    font-weight: normal;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.landing .text .content p {
+    font-size: 14px;
+    line-height: 2;
+}
+
+.landing .change-background {
+    color: white;
+    position: absolute;
+    transition: var(--main-transition);
+    cursor: pointer;
+}
+
+.landing .arrow-left {
+    top: 50%;
+    left: 25px;
+    transform: translateY(-50%);
+}
+
+.landing .arrow-left:hover {
+    left: 15px;
+
+}
+
+.landing .arrow-right {
+    top: 50%;
+    right: 25px;
+    transform: translateY(-50%);
+}
+
+.landing .arrow-right:hover {
+    right: 15px;
+}
+
+@media (max-width:992px) {
+    .landing .text {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .landing .text .content h2 {
+        font-size: 22px;
+
+    }
+
+    .landing .text .content p {
+        font-size: 12px;
+        line-height: 2;
+    }
+
+    .landing .change-background {
+        display: none;
+    }
+
+}
+
+.landing .bullets {
+    position: absolute;
+    transform: translateX(-50%);
+    bottom: 30px;
+    left: 50%;
+    display: flex;
+}
+
+.landing .bullets li {
+    width: 20px;
+    height: 20px;
+    border: 1px solid white;
+    border-radius: 50%;
+    margin-right: 10px;
+    transition: var(--main-transition);
+}
+
+.landing .bullets li:hover {
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+    cursor: pointer;
+}
+
+.landing .bullets .active {
+    background-color: var(--main-color);
+    border-color: var(--main-color)
+}
+
+/* =============================  End Landing ==================================== */
+
+
+/* =============================  Start Services ==================================== */
+
+.services {
+    padding: 100px 0
+}
+
+.services .services-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-column-gap: 50px;
+    grid-row-gap: 60px;
+
+}
+
+.services .serv-box {
+    display: flex;
+}
+
+.services .serv-box i {
+    margin-right: 30px
+}
+
+
+.services .serv-box .text h3 {
+    color: var(--main-color);
+    margin-bottom: 30px;
+}
+
+.services .serv-box .text p {
+    line-height: 2;
+    color: #777;
+}
+
+@media (max-width: 767px) {
+    .services .serv-box {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .services .serv-box i {
+        margin: 0 0 30px;
+    }
+}
+
+/* =============================  End Services ==================================== */
+
+
+/* =============================  Start Design ==================================== */
+
+.design {
+    padding: 100px 0;
+    display: flex;
+    background-image: url("../images/design-features.jpg");
+    background-size: cover;
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+    color: white;
+}
+
+.design::before {
+    content: "";
+    background-color: rgb(0 0 0 / 60%);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+}
+
+.design .image,
+.design .text {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+}
+
+.design .image {
+    text-align: center;
+    bottom: -150px;
+}
+
+
+.design .text {
+    padding: 50px;
+    background-color: var(--transparent-color);
+}
+
+
+.design .text h2 {
+    text-transform: uppercase;
+    font-weight: normal;
+    margin-bottom: 40px;
+
+}
+
+.design .text ul li {
+    padding: 15px 0;
+}
+
+.design .text ul li::before {
+    content: "\f390";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 20px;
+    font-size: 17px;
+    position: relative;
+    top: 2px;
+}
+
+@media (max-width:767px) {
+    .design .image {
+        display: none;
+    }
+
+}
+
+
+/* =============================  End Design ==================================== */
+
+
+/* =============================  Start Portfolio ==================================== */
+
+.portfolio {
+    padding: var(--section-padding);
+}
+
+.portfolio .shuffle {
+    display: flex;
+    justify-content: center;
+
+}
+
+.portfolio .shuffle li {
+    padding: 10px;
+    transition: var(--main-transition);
+    color: #333;
+}
+
+.portfolio .shuffle li:hover {
+    background-color: var(--main-color);
+    color: white;
+    cursor: pointer;
+
+}
+
+.portfolio .shuffle .active {
+    background-color: var(--main-color);
+    color: white;
+}
+
+.portfolio .imgs-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 60px;
+}
+
+.portfolio .imgs-container .img-box {
+    position: relative;
+    overflow: hidden;
+}
+
+@media (min-width:768px) {
+    .portfolio .imgs-container .img-box {
+        flex-basis: 50%;
+        position: relative;
+    }
+}
+
+@media (min-width:1199px) {
+    .portfolio .imgs-container .img-box {
+        flex-basis: 25%;
+    }
+}
+
+.portfolio .imgs-container .img-box img {
+    max-width: 100%;
+    transition: var(--main-transition);
+}
+
+.portfolio .imgs-container .img-box .text {
+    padding: 20px;
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    bottom: -100%;
+    transition: var(--main-transition);
+}
+
+.portfolio .imgs-container .img-box:hover .text {
+    bottom: 0px;
+}
+
+.portfolio .imgs-container .img-box:hover img {
+    transform: scale(1.1) rotate(3deg);
+}
+
+.portfolio .imgs-container .img-box .text h4 {
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.portfolio .imgs-container .img-box .text p {
+    color: var(--main-color);
+}
+
+.portfolio .more {
+    text-decoration: none;
+    color: white;
+    background-color: var(--main-color);
+    padding: 15px 30px;
+    text-align: center;
+    display: block;
+    width: fit-content;
+    margin: 30px auto;
+    text-transform: uppercase;
+    transition: var(--main-transition);
+}
+
+.portfolio .more:hover {
+    color: #333;
+}
+
+/* =============================  End Portfolio ==================================== */
+
+/* =============================  Start Video ==================================== */
+
+.video {
+    position: relative;
+}
+
+.video::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 60%);
+    position: absolute;
+}
+
+.video video {
+    max-width: 100%;
+}
+
+.video .text {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    color: white;
+    background-color: var(--transparent-color);
+    padding: 50px;
+    text-align: center;
+}
+
+.video .text h2 {
+    font-weight: normal;
+    margin: 0 0 30px 0;
+    text-transform: uppercase;
+}
+
+.video .text p {
+    margin-bottom: 30px;
+}
+
+.video .text button {
+    background-color: #101010;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    transition: var(--main-transition);
+}
+
+.video .text button:hover {
+    background-color: #777;
+    cursor: pointer;
+}
+
+/* =============================  End Video ==================================== */
+
+/* =============================  Start About-Us ==================================== */
+.about-us {
+
+    padding-top: 100px;
+    overflow: hidden;
+
+    text-align: center;
+}
+
+
+.about-us img {
+    position: relative;
+    bottom: -120px;
+    margin-top: -120px;
+    max-width: 100%;
+}
+
+@media (max-width:767px) {
+    .about-us img {
+        bottom: -60px;
+        margin-top: -60px;
+    }
+}
+
+/* =============================  End About-Us ==================================== */
+
+/* =============================  Start Stats ==================================== */
+
+.stats {
+    padding: var(--section-padding);
+    background-image: url(../images/stats.png);
+    background-size: cover;
+    position: relative;
+    text-align: center;
+}
+
+.stats::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 60%);
+    position: absolute;
+    left: 0;
+    top: 0;
+
+}
+
+.stats .container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.stats .container .box {
+    color: white;
+    padding: 50px;
+    background-color: var(--transparent-color);
+}
+
+@media (max-width:767px) {
+    .stats .container .box {
+        flex-basis: 100%;
+    }
+}
+
+@media (min-width:768px) {
+    .stats .container .box {
+        flex-basis: 50%;
+    }
+}
+
+@media (min-width:992px) {
+    .stats .container .box {
+        flex-basis: 25%;
+    }
+}
+
+.stats .container .box i {
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    display: flex;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 30px;
+}
+
+.stats .container .box .number {
+    font-size: 40px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.stats .container .box p {
+    font-size: 14px;
+}
+
+/* =============================  End Stats ==================================== */
+
+/* =============================  Start Why-Us ==================================== */
+
+.why-us {
+    padding: var(--section-padding);
+}
+
+.why-us .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.why-us .container>div {
+    flex-basis: 45%;
+}
+
+@media (max-width:768px) {
+    .why-us .container>div {
+        flex-basis: 100%;
+    }
+}
+
+.why-us .container .text {
+    text-align: center;
+}
+
+.why-us .container div>h3 {
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    font-weight: normal;
+}
+
+.why-us .container .text>p {
+    line-height: 1.8;
+    margin-bottom: 60px;
+    color: #777;
+}
+
+.why-us .container .testimonials .customers-opinions .opinion {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.why-us .testimonials .customers-opinions img {
+    width: 100px;
+    border-radius: 50%;
+    margin-right: 50px;
+    transition: var(--main-transition);
+}
+
+.why-us .testimonials .customers-opinions img:hover {
+    transform: scale(1.1) rotate(-2deg);
+}
+
+.why-us .customers-opinions .opinion .op-text {
+    border-bottom: 1px solid #ccc;
+    line-height: 1.5;
+}
+
+
+.why-us .customers-opinions .opinion .op-text p:last-child {
+    text-align: right;
+    margin-bottom: 10px;
+    color: #777;
+    font-size: 14px;
+}
+
+.why-us .testimonials .bullets {
+    display: flex;
+    margin: 50px 0;
+    justify-content: center;
+}
+
+.why-us .bullets li {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 1px solid #aaa;
+    transition: var(--main-transition);
+}
+
+.why-us .bullets li:hover {
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+    cursor: pointer;
+}
+
+.why-us .bullets .active {
+    background-color: var(--main-color);
+    border-color: var(--main-color)
+}
+
+
+.why-us .skills .skills-bars h4 {
+    text-transform: uppercase;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+.why-us .skills .skills-bars .skill-bar {
+    background-color: #dedadc;
+    height: 30px;
+    margin-bottom: 20px;
+}
+
+.why-us .skills .skills-bars span {
+    display: inline-block;
+    background-color: var(--main-color);
+    height: 100%;
+    position: relative;
+    font-size: 14px;
+}
+
+.why-us .skills .skills-bars span::before {
+    content: attr(data-progress);
+    background-color: black;
+    color: white;
+    border-radius: 4px;
+    padding: 3px;
+    position: absolute;
+    top: -28px;
+    right: -18px;
+}
+
+.why-us .skills .skills-bars span::after {
+    content: "";
+    position: absolute;
+    border-color: black transparent transparent transparent;
+    border-width: 5px;
+    border-style: solid;
+    top: -6px;
+    right: -5px;
+}
+
+/* =============================  End Why-Us ==================================== */
+
+
+/* =============================  Start Quote ==================================== */
+
+.quote {
+    padding: var(--section-padding);
+    background-image: url(../images/quote.jpg);
+    background-size: cover;
+    position: relative;
+    color: white;
+    text-align: center;
+}
+
+.quote::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 75%);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.quote .container {
+    position: relative;
+}
+
+.quote q {
+    font-size: 25px;
+    display: block;
+    margin-bottom: 25px;
+}
+
+.quote q::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f10d";
+    margin-right: 5px;
+
+}
+
+.quote q::after {
+    content: "\f10e";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-left: 5px;
+}
+
+/* =============================  End Quote ==================================== */
+
+
+/* =============================  Start Pricing ==================================== */
+
+.pricing {
+    padding: var(--section-padding);
+}
+
+.pricing .plans {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.pricing .plans .plan {
+    background-color: #fcfcfc;
+}
+
+.pricing .plans .plan .head {
+    border-top: 1px solid var(--main-color);
+    border-bottom: 1px solid var(--main-color);
+    padding: 40px 20px;
+}
+
+.pricing .plans .plan .head p {
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.pricing .plans .plan .head span {
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.pricing .plans .plan .head span::before {
+    content: "$";
+    position: relative;
+    top: -35px;
+    font-weight: normal;
+    font-size: 25px;
+    right: 5px;
+}
+
+.pricing .plans .plan .head span::after {
+    content: "/Mo";
+    font-size: 20px;
+    font-weight: normal;
+    position: relative;
+    right: -15px;
+}
+
+.pricing .plans .plan .center {
+    border-bottom: 1px solid var(--main-color);
+}
+
+.pricing .plans .plan .center li {
+    padding: 20px 0;
+    position: relative;
+}
+
+.pricing .plans .plan .center li:not(:last-child)::after {
+    content: "";
+    border-bottom: 1px solid var(--main-color);
+    height: 1px;
+    display: block;
+    width: 140px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 14px;
+
+}
+
+.pricing .plans .plan .foot {
+    text-decoration: none;
+    margin: 30px auto;
+    display: block;
+    padding: 15px 20px;
+    width: fit-content;
+    border: 1px solid var(--main-color);
+    transition: var(--main-transition);
+}
+
+.pricing .plans .plan .foot:hover {
+    background-color: var(--main-color);
+    color: white;
+}
+
+.pricing .container .contact {
+    text-align: center;
+
+    padding: 20px;
+}
+
+.pricing .container .contact p {
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.pricing .container .contact a {
+    background-color: var(--main-color);
+    text-decoration: none;
+    color: white;
+    padding: 15px 25px;
+    margin: 30px auto 0;
+    display: block;
+    width: fit-content;
+    transition: var(--main-transition);
+}
+
+.pricing .container .contact a:hover {
+    color: black;
+}
+
+/* =============================  End Pricing ==================================== */
+
+
+/* =============================  Start Subscribe ==================================== */
+
+.subscribe {
+    padding: var(--section-padding);
+    background-image: url(../images/subscribe.jpg);
+    background-size: cover;
+    position: relative;
+}
+
+.subscribe::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 45%);
+    position: absolute;
+    left: 0;
+    top: 0;
+
+}
+
+.subscribe .container {
+    display: flex;
+    position: relative;
+    color: white;
+    align-items: center;
+}
+
+.subscribe .container form {
+    position: relative;
+    width: 500px;
+    max-width: 100%;
+    display: flex;
+}
+
+
+
+.subscribe .container form i {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    font-size: 23px;
+    font-weight: bolder;
+}
+
+.subscribe .container form input[type="email"] {
+    background: none;
+    padding: 20px 20px 20px 50px;
+    color: white;
+    border: 1px solid white;
+    border-right: none;
+    width: calc(100% - 130px);
+}
+
+.subscribe .container form input[type="email"]::placeholder {
+    color: white;
+}
+
+.subscribe .container form input[type="submit"] {
+    background-color: var(--main-color);
+    border: 1px solid white;
+    padding: 15px;
+    border-left: none;
+    color: white;
+    text-transform: uppercase;
+    width: 130px;
+    transition: var(--main-transition);
+}
+
+.subscribe .container form input[type="submit"]:hover {
+    color: black;
+    cursor: pointer;
+}
+
+
+.subscribe .container form input[type="submit"]:focus,
+.subscribe .container form input[type="email"]:focus {
+    outline: none;
+}
+
+.subscribe p {
+    margin-left: 50px;
+    line-height: 1.8;
+}
+
+@media (max-width:991px) {
+    .subscribe .container {
+        flex-direction: column;
+    }
+
+    .subscribe .container form {
+        margin-bottom: 30px;
+    }
+
+    .subscribe p {
+        text-align: center;
+    }
+}
+
+/* =============================  End Subscribe ==================================== */
+
+/* =============================  Start Contact ==================================== */
+
+.contact {
+    padding: var(--section-padding);
+}
+
+.contact .content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact .content form {
+    flex-basis: 70%;
+}
+
+.contact .content .info {
+    flex-basis: 25%;
+}
+
+.contact .content form .text-input {
+    display: block;
+    margin-bottom: 30px;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+.contact .content form textarea {
+    max-width: 100%;
+    min-height: 200px;
+    resize: vertical;
+}
+
+.contact .content form input[type="submit"] {
+    background-color: var(--main-color);
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    text-transform: uppercase;
+    display: flex;
+    margin-left: auto;
+    transition: var(--main-transition);
+    cursor: pointer;
+}
+
+.contact .content form input[type="submit"]:hover {
+    color: black;
+}
+
+.contact .content form input:focus,
+.contact .content form textarea:focus {
+    outline: none;
+}
+
+.contact .content .info {}
+
+.contact .content .info div>h4 {
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.contact .content .info .address h4 {
+    margin-top: 90px;
+}
+
+.contact .content .info .number span {
+    display: block;
+    color: #777;
+}
+
+.contact .content .info .address address {
+    color: #777;
+    line-height: 2;
+}
+
+@media (max-width:768px) {
+    .contact .content {
+        flex-direction: column;
+    }
+
+    .contact .content .info {
+        text-align: center;
+        display: flex;
+        order: -1;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .contact .content .info .number {
+        flex-basis: 50%;
+    }
+
+    .contact .content .info .address {
+        margin-bottom: 30px;
+        flex-basis: 50%;
+    }
+
+    .contact .content .info .address h4 {
+        margin-top: 0px;
+    }
+}
+
+/* =============================  End Contact ==================================== */
+
+/* =============================  Start Footer ==================================== */
+
+.footer {
+    padding: 50px 0;
+    background-image: url(../images/subscribe.jpg);
+    background-size: cover;
+    position: relative;
+    color: white;
+}
+
+.footer::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 65%);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.footer .container {
+    text-align: center;
+    position: relative;
+
+}
+
+.footer .container img {
+    margin-bottom: 20px;
+}
+
+.footer .container p:not(.copyright) {
+    font-size: 22px;
+    padding: 20px;
+    border-bottom: 1px solid white;
+    width: fit-content;
+    margin: 20px auto;
+    text-transform: uppercase;
+}
+
+.footer .container .social-icons a {
+    text-decoration: none;
+    color: white;
+    margin: 15px;
+
+}
+
+
+.footer .container .social-icons i {
+    transition: var(--main-transition);
+    font-size: 18px;
+}
+
+.footer .container .social-icons a :first-child:hover {
+    color: #3b5998;
+}
+
+.footer .container .social-icons a :nth-child(2):hover {
+    color: #55acee;
+}
+
+.footer .container .social-icons a :nth-child(3):hover {
+    color: #00bf8f;
+}
+
+.footer .container .social-icons a :last-child:hover {
+    color: #007bb5;
+}
+
+.footer .container .copyright {
+    margin-top: 60px;
+}
+
+.footer .container .copyright a {
+    font-weight: bold;
+    color: var(--main-color);
+    text-decoration: none;
+}
+
+
+
+/* =============================  End Footer ==================================== */
